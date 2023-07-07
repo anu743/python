@@ -1,0 +1,5 @@
+list=['hello','hi','how r u']
+list2=["its","me","annapurna"]
+
+print(list)
+print(list2)
