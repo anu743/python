@@ -1,0 +1,36 @@
+list1=[10,20,30,"hello","this is annapurna"]
+print(list1) #printing list1
+
+list1[2]=50 #ressigning the value of the list with index
+print(list1)
+
+list1.append("how r you") #appending the value at end of the list
+print(list1)
+
+print(len(list1)) # printfs the number of elements of the list1
+print(list1[2:])#prints the elements from index 3 to end of the list
+print(list1[2:5]) #prints the elements from 3 to 5 
+
+#looping through the list1
+for i in list1:
+    print(i)
+    
+
+list2=list1.copy()
+print(list2) #copies the list1 to list2
+
+list1.extend(list2)  #adds any iterable(list,tuple,set,etc) end of the listst, list.extend(iterable)
+print(list1)
+
+print(list1.count(10)) #returns the no. of occurances of 10 in the list1
+print(list1.index(10)) #returns the lowest location of 10 in the list1
+print(list1.pop(10)) #removes the element from the specified index or not specified then removes last element
+list1.remove(10) #removes the specified element from the list, first occurances
+print(list1)
+#print(list1.sort()) #sort works only if it has homogenous elements
+
+list1.reverse() #reverse the elements of list1
+print(list1)
+
+list1.clear() #clears all the elements of the list1
+print(list1)
