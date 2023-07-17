@@ -1,0 +1,14 @@
+str1 = 'hello'
+str2 = "hello"
+str3 = '''HI 
+how are you'''
+
+print(str1,str2,str3)
+
+print(str1[0]) #accessing using index
+print(str1[1:]) #slicing of strings
+print(str1+str2) #concatination of strings
+print(len(str1)) #printing length of the strings
+#str1[0]='H' #strings are immutable , we cannt modify them
+print(str1)
+
