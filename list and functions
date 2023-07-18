@@ -15,7 +15,6 @@ print(list1[2:5]) #prints the elements from 3 to 5
 for i in list1:
     print(i)
     
-
 list2=list1.copy()
 print(list2) #copies the list1 to list2
 
