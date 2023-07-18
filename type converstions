@@ -1,0 +1,22 @@
+a=int(3.14)
+print(a)
+
+b=float(10)
+print(b)
+
+c=str(30) #converts to string type
+print("the value is",c,"type is ",type(c))
+
+list1=list("abcdef") #converts the abcdef to list
+print("list is",list1,"type is",type(list1))
+
+set1=set([1,2,3,4])  #converts the iterable to set type
+print("set is ",set1,"type is",type(set1))
+
+dict1=dict(name='anu',age=31,gender='female') #maps the given values and returns dict`
+print("dict is",dict1,"type is",type(dict1)) 
+
+tup1=tuple("abcdsed") #converts the iterable into tuple
+print("tuple is",tup1,"type is",type(tup1))
+
+#d=int("abeced") #illogical type conversion
