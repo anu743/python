@@ -1,0 +1,22 @@
+name="a"
+def fun1():
+    name="python"
+    def fun2():
+        global name
+        name="geeks"
+        def fun3():
+            global name
+            name="pythongeeks"
+            print("inside fun3",name)
+        print("inside fun2",name)
+        fun3()
+        print("after calling fun3",name)
+    print("inside fun1",name)
+    fun2()
+    print("after calling fun2",name)
+
+print("before calling functions",name)
+
+fun1()
+
+print("after calling the functions",name)
