@@ -1,0 +1,32 @@
+class Student:
+    no_of_students=10
+    
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+        
+    
+    def birthday(self):
+        self.age += 1 
+        return f"{self.name} has turned {self.age}\n"\
+                f"{self.no_of_students-1} sent gifts to him\n"
+                
+    
+    @classmethod  #decorator required to add calss method
+    def add_a_students(cls):
+        cls.no_of_students +=1 
+        
+    @classmethod
+    def total_Students(cls):
+        return f"class has {cls.no_of_students} number of students"
+
+
+students1= Student("cahn",13)
+
+print(students1.birthday())
+
+students1.add_a_students()
+print(students1.total_Students())
+
+Student.add_a_students()  # can be accessed using class name also
+print(Student.total_Students())
