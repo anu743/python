@@ -1,0 +1,42 @@
+class Soloman:
+    def __init__(self):
+        self.name="Soloman"
+        self.age=30
+    
+    def get_name(self):
+        self.newvariable=1234
+        print(f"hello,my name is {self.name}")
+    
+    def get_age(self):
+        print(f"my age is {self.age}")
+        
+
+class Charles:
+    def __init__(self):
+        self.name="Charles"
+        self.age=30
+    
+    def get_name(self):
+        print(f"hello,my name is {self.name}")
+    
+    def get_age(self):
+        print(f"my age is {self.age}")
+        
+
+
+person1=Soloman()
+person2=Charles()
+person1.get_name()
+print(person1.newvariable)
+for person in (person1,person2):
+    person.get_name()
+    person.get_age()
+    
+    
+
+print(Soloman) #prints calss name 
+print(Soloman.__dict__) # gives the details about the class`
+print(Soloman.__name__) #gives the name of the class
+print(Soloman.__module__) #gives the name of the module in which it is defined
+print(Soloman.__base__)  #
+print(Soloman.__doc__)
