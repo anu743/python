@@ -1,0 +1,36 @@
+class Student:
+    no_of_students=10
+    
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+        
+    def birthday(self):
+        self.age += 1 
+        return f"{self.name} has turned to {self.age}\n"\
+                f"{self.no_of_students-1} has sent the gifts"
+                
+    
+    @classmethod
+    def add_students(cls):
+        cls.no_of_students +=1 
+    
+    @classmethod
+    def total_students(cls):
+        return f"total students are {cls.no_of_students}"
+        
+    @staticmethod
+    def dob_format(raw_date):
+        return raw_date.replace("-","/")
+    
+    def get_dob(self,date):
+        formatted_date =self.dob_format(date)
+        self.dob=formatted_date
+    
+
+student1= Student("chan",13)
+
+student1.get_dob("11/12/2023")
+print(student1.dob)
+
+print(Student.dob_format("14-02-2021"))
