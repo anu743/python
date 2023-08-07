@@ -1,0 +1,63 @@
+class Example:
+    def __init__(self):
+        print("one")
+        
+    def __init__(self):
+        print("two")
+    def __init__(self):
+        print("three")
+        
+
+e=Example() #calls the constructor
+
+#multiple constructor with diff values in __init__()method
+
+class Sample:
+    def __init__(self,*arg):
+        if(len(arg))>1 :
+            self.ans=0
+            for i in arg:
+                self.ans +=i 
+        elif isinstance(arg[0],int):
+            self.ans=arg[0]*arg[0]
+        elif isinstance(arg[0],str):
+            self.ans="hello"+arg[0]
+            
+s1=Sample(1,2,3,5,4)
+print(s1.ans)
+s2=Sample("  annapurna")
+print(s2.ans)
+s3=Sample(10)
+print(s3.ans)
+print("\n")
+# calling call methods inside the __init__ constructor
+
+class eval_equations:
+    def __init__(self,*inp):
+        
+        print("length of arg",len(inp))
+        if len(inp) == 3:
+            self.ans = self.eq1(inp)
+        elif len(inp) == 2:
+            self.ans = self.eq2(inp)
+        else:
+            self.ans =self.eq3(inp)
+    def eq1(self,arg):
+        return "three"
+    
+    def eq2(self,args):
+        return "two"
+    
+    def eq3(self,args):
+        return "other"
+
+
+e=eval_equations(10)
+print(e.ans)
+e1=eval_equations(10,20)
+print(e1.ans)
+e2=eval_equations(10,20,30)
+print(e2.ans)
+
+## multiple constructors using @classmethod
+
