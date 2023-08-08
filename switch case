@@ -1,0 +1,67 @@
+def num_to_string(argument):
+    switcher = { 
+        0: "zero",
+        1: "one" ,
+        2: "two" ,
+        3: "three"
+    }
+        
+    return switcher.get(argument,"nothing") #here get method on dictionary switcher will return the mapped value for argument if not found it will return nothing 
+
+if __name__ == "__main__":
+    argument=0
+    print(num_to_string(argument))
+
+#using if else
+
+bike = "yamaha"
+
+if bike == "Hero":
+    print("bike is hero")
+elif bike == "Suzuki":
+    print("bike is Suzuki")
+elif bike == "yamaha":
+    print("bike is yamaha")
+else:
+    print("please choose correct answer")
+
+
+
+# using class
+
+class pythong_switch:
+    def day(self,month):
+        default = "incorrect day"
+        return getattr(self,'case_'+ str(month), lambda: default)()
+    
+    def case_1(self):
+        return "Jan"
+    def case_2(self):
+        return "feb"
+    
+    def case_3(self):
+        return "march"
+    
+my_switch = pythong_switch()
+
+print(my_switch.day(1))
+print(my_switch.day(3))
+
+
+#using match
+
+def number_to_str(arg):
+    match arg:
+        case 0:
+            return "one"
+        case 1:
+            return "two"
+        case 2:
+            return "three"
+        case default:
+            return "choose num"
+
+head = number_to_str(1)
+print(head)
+
+
