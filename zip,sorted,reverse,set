@@ -1,0 +1,27 @@
+questions=["name","color","shape"]
+answers=["annapurna","green","curve"]
+
+for que,ans in zip(questions,answers):
+    print(que,ans)
+
+king={'Rama':'the great king','krishna':'game changer','shiva':'peace'}
+
+for key, value in king.items():
+    print(key,"==",value)
+    
+
+#sorted
+
+list2=[1,2,4,3,6,2,7,8]
+
+for i in sorted(list2):
+    print(i,end=' ')
+
+print("\r")
+
+basket=["banana","apple","mango","banana","pomogranate","apple"]
+
+for fruit in reversed(sorted(set(basket))): # set will print once and sorted will sort the things in list, and reversed will print sorted list in reverse order
+    print(fruit,end=' ')
+    
+
