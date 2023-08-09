@@ -1,0 +1,46 @@
+class BitwiseOverload():
+    ValError="error "
+    def __init__(self,val):
+        self.val=val
+    def __or__(self,obj):
+        print("overloading OR operator")
+        if isinstance(obj,BitwiseOverload):
+            return self.val|obj.val
+        else:
+            return ValError
+    def __and__(self,obj):
+        print("overloading AND operator")
+        if isinstance(obj,BitwiseOverload):
+            return self.val & obj.val 
+        else:
+            return ValError
+    
+    def __xor__(self,obj):
+        print("overloading XOR operator")
+        if isinstance(obj,BitwiseOverload):
+            return self.val^obj.val 
+        else:
+            return ValError
+    
+    def __invert__(self):
+        print("oberloading NOT operator")
+        return ~self.val 
+    
+    def __lshift__(self,obj):
+        print("overloading __leftshift__")
+        return self.val << obj.val;
+    def __rshift__(self,obj):
+        print("overloading of rshift")
+        return self.val >> obj.val
+    
+    
+
+if __name__=='__main__':
+    obj1=BitwiseOverload(2)
+    obj2=BitwiseOverload(10)
+    print(obj1|obj2)
+    print(obj1&obj2)
+    print(obj1^obj2)
+    print(~obj1)
+    print(obj1<<obj2)
+    print(obj1>>obj2)
