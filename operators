@@ -1,0 +1,23 @@
+a,b=20,10
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b,"  ",a%b," ",a**b," ",a//b)
+
+l=[1,2,4,4]
+v=2
+if v in l:
+    print("true")
+else:
+    print("false")
+    
+if 20 not in l:
+    print("true")
+else:
+    print("false")
+    
+a,b,p,d=40,30,20,10
+c=a+b/d%p
+print(c)
+print(bin(6))
+
