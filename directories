@@ -1,0 +1,70 @@
+import os
+import datetime
+import filecmp as fc
+
+print(os.getcwd())
+
+os.chdir("/home/ravi/")
+print(os.getcwd())
+print(os.listdir()) #this will list the all the files and directories present in the current directory in the list format
+var=os.getcwd()
+#print(os.path.exists("Sampledir"))
+check = os.path.exists("Sampledir") #returns true if the dir existed
+
+if var == "/home/ravi":
+        if check == True:
+            print("inside if dir existed")
+            #os.rename("Sampledir","sample")
+            print("dir already existed and succussefully renamed")
+        else:
+            os.mkdir("Sampledir")  
+            print("new directory Sampledir is created")
+ 
+        print(os.getcwd())   #lists the current path all directories
+#        print(os.listdir())
+else:
+        print("failed to create the directory")
+ 
+m_time = os.path.getmtime('/home/ravi/Desktop')  #gets the last modified time of the directory
+print("last modified time of python_prgms is ",m_time)
+ 
+time=datetime.datetime.fromtimestamp(m_time).strftime("%d-%m-%y %H:%M:%S")  #converting to time format
+print("last modified time is ",time)
+
+print("removing the dir Sampledir")
+os.rmdir("Sampledir") #removes the dir 
+
+#for i,j,k in os.walk(os.getcwd()):  # gets the path , directory and files from the current directory
+  #  print("path",i)
+    #print("list of directories",j)
+    #print("list of files",k)
+print(os.path.getsize('Desktop'))  #prints the size of the directory - os.path.getsize(path)
+
+dir1= "/home/ravi/Desktop/python_prgms/sample1"
+dir2 = "/home/ravi/Desktop/python_prgms/sample2"
+
+common=["hello.py"]
+common1=["sample.py"]
+common2=["hello.py","sample.py","output.txt"]
+
+print(fc.cmpfiles(dir1,dir2,common))  #(['hello.py'], [], [])
+print(fc.cmpfiles(dir1,dir2,common1))#([], [], ['sample.py'])
+print(fc.cmpfiles(dir1,dir2,common2)) #(['hello.py'], [], ['sample.py', 'output.txt'])
+
+#fc.compfiles this compares the multiplefiles in the 2 directories are equal or not. it takes paths of the the 2 directories and file names that needs to be compare  
+#as 3rd param, and it returns a tuple containing 3 lists of mathched files, mismatched files and error files
+
+cmp = fc.dircmp(dir1,dir2)  #returns the comparision between the 2 directories 
+print(cmp)
+print(cmp.report())
+print(cmp.report_partial_closure())
+print(cmp.report_full_closure())
+
+
+#here report(), report_full_closure(), report_partial_closure() these 3 methods used to print the difference between the given directories
+#report -- this gives comparision between the directories, matched files and unmatached files etc
+#report_partial_closure - gives full details of sub directories as well
+#report_full_closure - same as report_partial_closure but gives the details of sub directories recurrsively
+
+
+
