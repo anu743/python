@@ -1,0 +1,48 @@
+import os
+
+file = "samplefile.txt"
+lines = ["i am python expert\n","i am a quick learner\n", "i can plan everything very well\n"]
+with open(file,'w') as f:
+    print(f.write("learn python")) #prints the number of characters written in to the file, write() takes string as a input and writes that into the file
+    print(f.writelines(lines)) #writes the given lines to the files
+
+print("file opened in w mode")
+ 
+f=open(file,'r')
+print(f.read())  #reads the entire file
+
+with open(file,'r') as f:
+    print(f.read(10))  #reads only 10 bytes
+    print(f.tell()) #tells the position of file descriptor
+    f.seek(1)  # seek(off_set,from_what)  , here from_what tells what to do depends on its value, if not specified by default this will takes as a 0
+                    # 0 - sets the referenece point to bigining of the file
+                    # 1 - sets the referenece point to current file position
+                    #2 - sets the reference point to enf of the file
+                    # off_set values tells how many bytes to moves  based on from_what
+                    #ex : f.seek(12,0) moves 12 bytes from start of the file
+                  
+    print(f.read(10))
+    print("\n\n fseek to 2")
+   # f.seek(-10,2) in python3 we cannt move to EOF , so this will throuw an error :  unsupportedOperation: can't do nonzero end-relative seeks
+    #print(f.read()) 
+    f.seek(0,2)
+    print(f.tell()) #84
+    f.seek(f.tell()-1,os.SEEK_SET) #using this we can move backward
+    print(f.tell()) #83
+    
+    print("\n\nflushing the buffer")
+    print(f.flush()) # this is used to flush the internal buffer
+                           # internal buffer is runtime library this is used to speed up the operations by preventing the system calls everytime
+                           #while reading and writting the data to the memory flush will be caleld because to avoid the possible garbage values from previous operations , from appearing
+                           #buffer can also be called as portion of the main memory of computer system. used to temporarly hold the data that is transferred in/out of the main storage
+                           
+    print(f.read())
+    print(f.fileno())
+    f.seek(0)
+    print(f.tell())
+    print(f.readlines()[:3])
+    
+    
+
+
+    
