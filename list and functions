@@ -21,15 +21,63 @@ print(list2) #copies the list1 to list2
 list1.extend(list2)  #adds any iterable(list,tuple,set,etc) end of the listst, list.extend(iterable)
 print(list1)
 
-print(list1.count(10)) #returns the no. of occurances of 10 in the list1
+print(list1.count(10)) #returns the no. of occurances of 10 in the list1 , if doesnt occur then return 0
 print(list1.index(10)) #returns the lowest location of 10 in the list1
-print(list1.pop(10)) #removes the element from the specified index or not specified then removes last element
+print(list1.pop(5)) #removes the element from the specified index or not specified then removes last element
 list1.remove(10) #removes the specified element from the list, first occurances
 print(list1)
 #print(list1.sort()) #sort works only if it has homogenous elements
-
+print("\nreversing the list\n")
 list1.reverse() #reverse the elements of list1
 print(list1)
 
+print(list1[-2]) #prints the second item from the last 
+print(type(list1[-2])) #checks the type of item from last to second
+print("\n 3 variable slicing")
+print(list1[2:10:2]) # prints elements from index 2 to 10 with steps of 2 
+print(list1[::3]) # prints all the elements of list with steps of taking 3 like , 0th, 3th , 6th,9th etc
+print(list1[-4:-1]) #prints the elements from -1 to -4 from begigining
+
+list1[2:4]=[2,10] #reassigned the items 3rd and 4th with [2,10] values
+
+list1.insert(2,3) #inserts item 3 at index 2 
+print(list1.index(3)) #returns the index of the element
+
+print(list1)
+
+print(10 in list1) #checks if 10 is there in the list and returns True if its there or else False
+print(100  not in list1) #checks 100 is not in the list1 , if not present returns true 
+del list1[1:4] #deletes the elementsfrom 2nd ot 4th
+del list1[5]  #deletes the item with idex 5
+#del list1 #deletes entire list1 , once we delete we cannt acces or try to print it 
+
+print(list1)
 list1.clear() #clears all the elements of the list1
 print(list1)
+print("\n\n")
+
+list3=[1,4,2,54,23,25,7,43,12,3]
+list3.sort()
+print(list3) # sort will work only if it has homogenous elements 
+print(min(list3)) #returns the min of list and works on homogenous elements
+print(max(list3)) #returns max of the elements and works on homogenous elements
+print(sum(list3)) #prints the sum of the list if its integers
+print(any(['','','a'])) #any function returns true if anyone of the element is not zero and list is not having empty elements
+print(any(['','',0]))
+print(sorted(list3)) #this returns the sorted list but doesnt change the original once
+list4 =list("asbhrtrj") #list() function converts the other types to list type
+print(list4)  
+#print(sum(list4)) throws error since it has all string characters
+#print(list1[-2]) #this gives an error that list index is out of range since the length of the list is 0 
+
+#print(type(list1[-2])) #checks the type of item from last to second
+
+
+#list compressions
+#list compressions is the way to create lists in one line expression
+
+multiple_3=[3*i for i in range(1,11)]
+print(multiple_3)
+
+mul_3=[i for i in range(1,31) if i%3==0]
+print(mul_3)
