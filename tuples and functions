@@ -1,0 +1,69 @@
+tuple0=()  #empty tuple
+print(tuple0,type(tuple0))
+tuple1=(1,)  #tuple with single element, for this we need to add cama, otherwise it will consider as integer
+print(tuple1,type(tuple1))
+tuple2=(4) #checking type whether tuple or integer
+print(tuple2,type(tuple2))
+
+#creating tuple with packing method 
+
+tuple3='a'  #this will consider as class type str , since we didnt add cama
+print(tuple3,type(tuple3))
+tuple31='a', #single element tuple with packing method
+print(tuple31,type(tuple31))
+tuple4=1,2,4,'b',"hello","hi"
+print(tuple4,type(tuple4))  
+
+print(tuple4[1:3])
+print(tuple4[:6])
+
+tuple5=(1,1,1,2,2,3,3)
+print(id(tuple5[0]),id(tuple5[1]),id(tuple5[2])) #id of same values in tuple will be same. value will be attached to id and it cannt be changed
+print(id(tuple5[3]),id(tuple5[4]))
+print(id(tuple5[5]),id(tuple5[6]))
+
+tuple6=(1,2,3,[1,2,3],5,6)
+print(id(tuple6[3]),tuple6[3])
+print(id(tuple6[3][0]))
+tuple6[3][0]=10 #list inside tuple can be modified , individual elements of tuple cannt be modified
+print(tuple6[3][0],id(tuple6[3][0]))
+
+#functions
+
+print(tuple6.index(2)) #returns the index of first occurance of the element and returns error if its not present in tuple (2 is not in tuple)
+print(tuple6.count(2))#returns no of occurances, if not present returns 0 
+print(tuple6.count(10))
+print(len(tuple6)) #returns no of elements
+#print(max(tuple6)) #returns max  value of tuple if same data types , here it returns error because it has int and list datatypes
+print(max(tuple5))
+print(min(tuple5))
+print(sum(tuple5))
+print(sorted(tuple5)) #sorting the tuple5 and replacing its values
+print(tuple5)
+print(all(tuple5)) #checks all the elements not empty and not 0 
+print(any(tuple5)) #checks any elements is not 0 adn not empty
+
+set1={1,2,4,5,'r'}
+print(set1)
+tuple7 = tuple(set1) #converts to tuple
+print(tuple7)
+tuple8 =tuple("helloHi") #converts to tuple
+print(tuple8)
+
+tup=(1,2,3,4,5)
+tup1=('a','b','c','d','e')
+tup2=(3,34,5,6,7)
+print(tup1+tup)
+print(tup*3) #doesnt modify the existed tuple
+print(tup)
+
+print(1 in tup)
+print(10 not in tup)
+print(tup is tup1) #is is used to test identity , means both tuples are stored in the same memory or not , incase if both are same
+
+print(tup2>tup) #should be done between same data types
+print(tup2 ==tup)
+
+a,b,c,d,e=tup #this is called unpacking of the tuple
+print(a,b,c,d,e)
+
