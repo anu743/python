@@ -1,0 +1,107 @@
+import array as arr 
+
+array1=arr.array("i",[1,2,3,4])
+print(array1) #array('i', [1, 2, 3, 4])
+
+for i in range(0,3):
+    print(array1[i],end=" ") #1,2,3
+    
+print() #newline
+
+#adding elements to array
+
+array1.insert(1,4)
+print(array1) #array('i', [1, 4, 2, 3, 4])
+
+#array with float type
+
+b=arr.array("d",[2.5,3.0,2.6,4.5]) 
+print(b) #array('d', [2.5, 3.0, 2.6, 4.5])
+
+b.append(6.5)
+print(b) #array('d', [2.5, 3.0, 2.6, 4.5, 6.5]) append will add in the end of the array 
+
+#removing elements from array
+b.pop(2)
+print(b) #array('d', [2.5, 3.0, 4.5, 6.5]) removes the elements at index 2 from array b 
+
+b.remove(3.0)
+print(b) #array('d', [2.5, 4.5, 6.5]) removes the first occurance of 3.0 in the array 
+
+list1=[1,2,3,45,6,6,4,43,54,23,4]
+
+c=arr.array('i',list1)
+print(c)#array('i', [1, 2, 3, 45, 6, 6, 4, 43, 54, 23, 4]) creating array from list 
+
+#array slicing 
+
+slice_arr = c[1:5]
+print(slice_arr) #array('i', [2, 3, 45, 6])
+
+
+#searching elements in an array 
+print(c.index(4)) #prints index of 4 first occurance in the array 
+
+#updating elements of array 
+
+c[4]=100
+print(c) #array('i', [1, 2, 3, 45, 100, 6, 4, 43, 54, 23, 4]) 
+
+#different operations 
+#counting elements 
+print(c.count(4)) #2 no.of times 4 present in the array 
+
+#reversing elements in the array 
+
+c.reverse()
+print(c) #array('i', [4, 23, 54, 43, 4, 6, 100, 45, 3, 2, 1])
+
+#extend elements of array 
+
+c.extend([3,4,5,6,14,243,53])
+print(c)#array('i', [4, 23, 54, 43, 4, 6, 100, 45, 3, 2, 1])
+
+
+# array data 
+print(c.typecode) #i prints the typecode 
+print(c.itemsize) # size of the item in the array 
+
+print(c.buffer_info()) # (140223550391680, 18) address of the array and no. of elements
+
+l=[8,9,0]
+c.fromlist(l)
+print(c) #array('i', [4, 23, 54, 43, 4, 6, 100, 45, 3, 2, 1, 3, 4, 5, 6, 14, 243, 53, 8, 9, 0])
+
+l2=c.tolist()
+print(l2)#[4, 23, 54, 43, 4, 6, 100, 45, 3, 2, 1, 3, 4, 5, 6, 14, 243, 53, 8, 9, 0]
+
+print(arr.typecodes) #bBuhHiIlLqQfd
+
+
+b.byteswap()  #it will swap the value with byte  address
+print(b) #array('d', [5.375e-321, 2.3083e-320, 3.32e-320])
+
+#unicode string
+d=arr.array('u',"python")
+print(d) #character array 
+print(d.buffer_info()) #(140094587955056, 6)
+for i in d:
+    print(i,end=" ") #p y t h o n 
+
+print()
+print(d.tounicode()) #python , converts to string 
+
+
+#Operations:
+ 
+ #joining 2 arrays
+ 
+x=arr.array("i",[1,2,4])
+y=arr.array("i",[0,9,8])
+z=x+y 
+print(z) #array('i', [1, 2, 4, 0, 9, 8])
+print(x*2) #array('i', [1, 2, 4, 1, 2, 4]) multiplication 
+
+    
+
+
